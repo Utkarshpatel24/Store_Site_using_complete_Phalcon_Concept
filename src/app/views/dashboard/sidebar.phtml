@@ -1,0 +1,54 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/dashboard/index/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="home"></span>
+              <?php echo $this->locale->_('Dashboard'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/shop/index/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="file"></span>
+              <?php echo $this->locale->_('shop'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/orderList/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="file"></span>
+              <?php echo $this->locale->_('Orders'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/placeOrder/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="file"></span>
+              <?php echo $this->locale->_('Place Orders'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/product/index/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="shopping-cart"></span>
+              <?php echo $this->locale->_('Products'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/customerlist/?bearer=<?php echo $_GET['bearer'];?>">
+              <span data-feather="users"></span>
+              <?php echo $this->locale->_('Customers'); ?>
+            </a>
+          <!-- </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              <?php echo $this->locale->_('Reports'); ?>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li> -->
+        </ul>        
+      </div>
+    </nav>

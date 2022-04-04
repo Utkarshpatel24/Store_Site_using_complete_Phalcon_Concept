@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="event-schedule-area-two bg-color pad100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <div class="title-text">
+                        <h2>Customer List</h2>
+                    </div>
+                    <p>
+                        It's an customer list where admin can approve, dissapprove and delete customer
+                        
+                    </p>
+                </div>
+            </div>
+            <!-- /.col end-->
+        </div>
+        <!-- row end-->
+        <div class="row">
+            <div class = "col-lg-3">
+                <?php require_once"sidebar.phtml"; ?>
+            </div>
+            <div class="col-lg-9">
+               
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="home" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Custome_ID</th>
+                                        <th scope="col">Customers</th>
+                                        <th scope="col">Details</th>
+                                        <th scope="col">Venue</th>
+                                        <th class="text-center" scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php echo $display?>
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                   
+                   
+                    
+                    
+                </div>
+                  <ul class="nav custom-tab" id="myTab" role="tablist">
+               
+                    <?php
+                          //$page=$data[1];
+                          $last=$page->getLast();
+                          $disp='';
+                          if($page->getCurrent() != 1)
+                          $disp.=' <li class="page-item"><a class="page-link" href="/dashboard/customerlist?page='.$page->getPrevious().'&bearer='.$this->request->getQuery('bearer').'">Previous</a></li>';
+                          // $j=1;
+                          for ($i=1;$i<=$last;$i++)
+                          {
+                            $disp.='<li class="page-item"><a class="page-link" href="/dashboard/customerlist?page='.$i.'&bearer='.$this->request->getQuery('bearer').'">'.$i.'</a></li>';
+
+                          }
+                          if($page->getCurrent() != $page->getLast())
+                          $disp.=' <li class="page-item"><a class="page-link" href="/dashboard/customerlist?page='.$page->getNext().'&bearer='.$this->request->getQuery('bearer').'">Next</a></li>';
+                          echo $disp;
+                    ?>
+                </ul>
+            </div>
+            <!-- /col end-->
+        </div>
+        <!-- /row end-->
+    </div>
+</div>
+</body>
+</html>
